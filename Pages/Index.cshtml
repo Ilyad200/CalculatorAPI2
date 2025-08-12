@@ -1,0 +1,29 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model CalculatorAPI.Pages.IndexModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalculatorAPI</title>
+</head>
+<body>
+    <h1>Welcome CalculatorAPI App</h1>
+
+    <form asp-action="/Index" method="get">
+        <label for="from">Из:</label>
+        <input type="number" min="0" id="from" name="from" minlength="1" required />
+        
+        <label for="to">В:</label>
+        <input type="number" min="0" id="to" name="to" minlength="1" required />
+
+        <label for="value">Значение:</label>
+        <input type="text" id="value" name="value" minlength="1" required />
+        <button>Добавить</button>
+    </form>
+
+    <p>@Model.result</p>
+</body>
+</html>
